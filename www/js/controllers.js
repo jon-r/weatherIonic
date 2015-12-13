@@ -1,4 +1,4 @@
-angular.module('starter.controllers', [])
+angular.module('jrWeather.controllers', [])
 
 .controller('AppCtrl', function($scope, $ionicModal, $timeout) {
 
@@ -41,8 +41,8 @@ angular.module('starter.controllers', [])
   };
 })
 
-.controller('PlaylistsCtrl', function($scope) {
-  $scope.playlists = [
+.controller('FavouritesCtrl', function($scope) {
+  $scope.favourites = [
     { title: 'Reggae', id: 1 },
     { title: 'Chill', id: 2 },
     { title: 'Dubstep', id: 3 },
@@ -52,5 +52,5 @@ angular.module('starter.controllers', [])
   ];
 })
 
-.controller('PlaylistCtrl', function($scope, $stateParams) {
+.controller('WeatherCtrl', function($scope, $stateParams) {
 });
