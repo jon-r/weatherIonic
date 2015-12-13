@@ -1,0 +1,8 @@
+/*weather app overides of ionic classes*/
+.grade-b .menu-content,
+.grade-c .menu-content {
+  border-right: 1px solid darken($positive, 20%);
+  border-left: 1px solid darken($positive, 20%);
+}
+
+/*weather app new elements*/

@@ -50,6 +50,7 @@ angular.module('jrWeather.controllers', [])
     { title: 'Rap', id: 5 },
     { title: 'Cowbell', id: 6 }
   ];
+  $scope.listCanSwipe = true;
 })
 
 .controller('WeatherCtrl', function($scope, $stateParams) {

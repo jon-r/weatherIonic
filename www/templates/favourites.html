@@ -1,8 +1,14 @@
 <ion-view view-title="Favourites">
   <ion-content>
-    <ion-list>
-      <ion-item ng-repeat="fave in favourites" href="#/app/weather/{{fave.id}}">
+    <ion-list type="card" can-swipe="listCanSwipe">
+
+      <ion-item ng-repeat="fave in favourites" href="#/app/weather/{{fave.id}}" class="">
+<!--         <i class="icon ion-star"></i>-->
         {{fave.title}}
+         <ion-option-button class="button-info"
+                       ng-click="edit(item)">
+      Edit
+    </ion-option-button>
       </ion-item>
     </ion-list>
   </ion-content>

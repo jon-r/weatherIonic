@@ -15,6 +15,9 @@ $assertive:                       #ef473a !default;
 $royal:                           #886aea !default;
 $dark:                            #444 !default;
 */
+/*
+$menu-bg: $positive;
+$base-background-color: darken($positive, 10%);*/
 /*!
   Ionicons, v2.0.1
   Created by Ben Sperry for the Ionic Framework, http://ionicons.com/
@@ -9730,3 +9733,12 @@ a.button {
   opacity: 0;
   -webkit-transition-duration: 0s;
   transition-duration: 0s; }
+
+/*weather app special settings*/
+/*weather app overides of ionic classes*/
+.grade-b .menu-content,
+.grade-c .menu-content {
+  border-right: 1px solid #0a4cbd;
+  border-left: 1px solid #0a4cbd; }
+
+/*weather app new elements*/
