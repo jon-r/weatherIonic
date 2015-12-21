@@ -1,19 +1,30 @@
 <ion-view view-title="Search">
   <ion-content >
 
-    <ion-list type="card" class="">
-      <div class="item item-divider">
-        <h1>Search</h1>
-      </div>
+    <ion-list type="list-inset" class="">
 
-      <div class="item item-input-inset">
-        <label class="item-input-wrapper">
-          <input type="text" placeholder="Search for your city">
+      <li class="item item-input-inset">
+          <label class="item-input-wrapper">
+          <input ng-model="search.valueIn" type="text" placeholder="Search for your city">
         </label>
-        <button class="button button-small">
-          Search
+
+      </li>
+
+      <ion-item class="item-button-right" ng-hide="search.valueIn.length > 2"
+                ng-repeat="city in faveCities | orderBy: 'name'" >
+        <a href="#app/weather/{{city.id}}">{{city.name}} {{city.name2}}</a>
+        <button class="button button-energized button-clear" ng-click="toggle(city)">
+          <i class="icon ion-android-star" ></i>
         </button>
-      </div>
+      </ion-item>
+
+      <ion-item class="item-button-right" ng-show="search.valueIn.length > 2" ng-repeat="city in cities | orderBy: 'name' | filter:search.valueIn | limitTo: 10" >
+        <a href="#app/weather/{{city.id}}">{{city.name}} {{city.name2}}</a>
+        <button class="button button-clear" ng-click="toggle(city)"
+                ng-class="isFave(city)?'button-energized':''">
+          <i class="icon ion-android-star" ></i>
+        </button>
+      </ion-item>
     </ion-list>
   </ion-content>
 </ion-view>

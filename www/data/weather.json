@@ -1,0 +1,272 @@
+{
+  "0": {
+    "name":"Clear night",
+    "tempMod":1,
+    "windMod":0,
+    "personBase":1,
+    "rainLvl":0,
+    "cloudLvl":0,
+    "extra":""
+  },
+  "1": {
+    "name":"Sunny day",
+    "tempMod":1,
+    "windMod":0,
+    "personBase":1,
+    "rainLvl":0,
+    "cloudLvl":0,
+    "extra":""
+  },
+  "2": {
+    "name":"Partly cloudy (night)",
+    "tempMod":1,
+    "windMod":0,
+    "personBase":1,
+    "rainLvl":0,
+    "cloudLvl":2,
+    "extra":""
+  },
+  "3": {
+    "name":"Partly cloudy (day)",
+    "tempMod":1,
+    "windMod":0,
+    "personBase":1,
+    "rainLvl":0,
+    "cloudLvl":2,
+    "extra":""
+  },
+  "5": {
+    "name":"Mist",
+    "tempMod":1,
+    "windMod":0,
+    "personBase":1,
+    "rainLvl":0,
+    "cloudLvl":2,
+    "extra":"fog1"
+  },
+  "6": {
+    "name":"Fog",
+    "tempMod":1,
+    "windMod":0,
+    "personBase":1,
+    "rainLvl":0,
+    "cloudLvl":3,
+    "extra":"fog2"
+  },
+  "7": {
+    "name":"Cloudy",
+    "tempMod":1,
+    "windMod":0,
+    "personBase":1,
+    "rainLvl":0,
+    "cloudLvl":2,
+    "extra":""
+  },
+  "8": {
+    "name":"Overcast",
+    "tempMod":1,
+    "windMod":0,
+    "personBase":1,
+    "rainLvl":0,
+    "cloudLvl":3,
+    "extra":""
+  },
+  "9": {
+    "name":"Light rain shower (night)",
+    "tempMod":0,
+    "windMod":0,
+    "personBase":6,
+    "rainLvl":1,
+    "cloudLvl":2,
+    "extra":""
+  },
+  "10": {
+    "name":"Light rain shower (day)",
+    "tempMod":0,
+    "windMod":0,
+    "personBase":6,
+    "rainLvl":1,
+    "cloudLvl":2,
+    "extra":""
+  },
+  "11": {
+    "name":"Drizzle",
+    "tempMod":0,
+    "windMod":0,
+    "personBase":6,
+    "rainLvl":1,
+    "cloudLvl":3,
+    "extra":""
+  },
+  "12": {
+    "name":"Light rain",
+    "tempMod":0,
+    "windMod":0,
+    "personBase":6,
+    "rainLvl":1,
+    "cloudLvl":2,
+    "extra":""
+  },
+  "13": {
+    "name":"Heavy rain shower (night)",
+    "tempMod":0,
+    "windMod":1,
+    "personBase":7,
+    "rainLvl":2,
+    "cloudLvl":4,
+    "extra":""
+  },
+  "14": {
+    "name":"Heavy rain shower (day)",
+    "tempMod":0,
+    "windMod":1,
+    "personBase":7,
+    "rainLvl":2,
+    "cloudLvl":4,
+    "extra":""
+  },
+  "15": {
+    "name":"Heavy rain",
+    "tempMod":0,
+    "windMod":1,
+    "personBase":7,
+    "rainLvl":2,
+    "cloudLvl":4,
+    "extra":""
+  },
+  "16": {
+    "name":"Sleet shower (night)",
+    "tempMod":0,
+    "windMod":1,
+    "personBase":7,
+    "rainLvl":1,
+    "cloudLvl":2,
+    "extra":"snow1"
+  },
+  "17": {
+    "name":"Sleet shower (day)",
+    "tempMod":0,
+    "windMod":1,
+    "personBase":7,
+    "rainLvl":1,
+    "cloudLvl":2,
+    "extra":"snow1"
+  },
+  "18": {
+    "name":"Sleet",
+    "tempMod":0,
+    "windMod":1,
+    "personBase":7,
+    "rainLvl":1,
+    "cloudLvl":2,
+    "extra":"snow1"
+  },
+  "19": {
+    "name":"Hail shower (night)",
+    "tempMod":0,
+    "windMod":1,
+    "personBase":7,
+    "rainLvl":2,
+    "cloudLvl":3,
+    "extra":"hail"
+  },
+  "20": {
+    "name":"Hail shower (day)",
+    "tempMod":0,
+    "windMod":1,
+    "personBase":8,
+    "rainLvl":2,
+    "cloudLvl":3,
+    "extra":"hail"
+  },
+  "21": {
+    "name":"Hail",
+    "tempMod":0,
+    "windMod":1,
+    "personBase":8,
+    "rainLvl":2,
+    "cloudLvl":3,
+    "extra":"hail"
+  },
+  "22": {
+    "name":"Light snow shower (night)",
+    "tempMod":1,
+    "windMod":0,
+    "personBase":5,
+    "rainLvl":0,
+    "cloudLvl":2,
+    "extra":"snow1"
+  },
+  "23": {
+    "name":"Light snow shower (day)",
+    "tempMod":1,
+    "windMod":0,
+    "personBase":5,
+    "rainLvl":0,
+    "cloudLvl":2,
+    "extra":"snow1"
+  },
+  "24": {
+    "name":"Light snow",
+    "tempMod":1,
+    "windMod":0,
+    "personBase":5,
+    "rainLvl":0,
+    "cloudLvl":2,
+    "extra":"snow1"
+  },
+  "25": {
+    "name":"Heavy snow shower (night)",
+    "tempMod":0,
+    "windMod":0,
+    "personBase":9,
+    "rainLvl":1,
+    "cloudLvl":3,
+    "extra":"snow2"
+  },
+  "26": {
+    "name":"Heavy snow shower (day)",
+    "tempMod":0,
+    "windMod":0,
+    "personBase":9,
+    "rainLvl":1,
+    "cloudLvl":3,
+    "extra":"snow2"
+  },
+  "27": {
+    "name":"Heavy snow",
+    "tempMod":0,
+    "windMod":0,
+    "personBase":9,
+    "rainLvl":1,
+    "cloudLvl":3,
+    "extra":"snow2"
+  },
+  "28": {
+    "name":"Thunder shower (night)",
+    "tempMod":0,
+    "windMod":0,
+    "personBase":9,
+    "rainLvl":2,
+    "cloudLvl":4,
+    "extra":"lightning"
+  },
+  "29": {
+    "name":"Thunder shower (day)",
+    "tempMod":0,
+    "windMod":0,
+    "personBase":9,
+    "rainLvl":2,
+    "cloudLvl":4,
+    "extra":"lightning"
+  },
+  "30": {
+    "name":"Thunder",
+    "tempMod":0,
+    "windMod":0,
+    "personBase":9,
+    "rainLvl":2,
+    "cloudLvl":4,
+    "extra":"lightning"
+  }
+}

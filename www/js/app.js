@@ -4,6 +4,7 @@
 // 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
 // the 2nd parameter is an array of 'requires'
 // 'starter.controllers' is found in controllers.js
+
 angular.module('jrWeather', ['ionic', 'jrWeather.controllers'])
 
 .run(function($ionicPlatform) {
@@ -36,7 +37,8 @@ angular.module('jrWeather', ['ionic', 'jrWeather.controllers'])
       url: '/search',
       views: {
         'menuContent': {
-          templateUrl: 'templates/search.html'
+          templateUrl: 'templates/search.html',
+          controller: 'SearchCtrl'
         }
       }
     })
@@ -59,16 +61,6 @@ angular.module('jrWeather', ['ionic', 'jrWeather.controllers'])
       }
     })
 
-    .state('app.favourites', {
-      url: '/favourites',
-      views: {
-        'menuContent': {
-          templateUrl: 'templates/favourites.html',
-          controller: 'FavouritesCtrl'
-        }
-      }
-    })
-
     .state('app.single', {
       url: '/weather/:cityId',
       views: {
@@ -79,5 +71,5 @@ angular.module('jrWeather', ['ionic', 'jrWeather.controllers'])
       }
     });
   // if none of the above states are matched, use this as the fallback
-  $urlRouterProvider.otherwise('/app/favourites');
+  $urlRouterProvider.otherwise('app/search');
 });

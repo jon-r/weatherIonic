@@ -1,4 +1,4 @@
-angular.module('jrWeather.controllers', [])
+angular.module('jrWeather.controllers', ['jrWeather.services'])
 
 .controller('AppCtrl', function($scope, $ionicModal, $timeout) {
 
@@ -41,17 +41,26 @@ angular.module('jrWeather.controllers', [])
   };
 })
 
-.controller('FavouritesCtrl', function($scope) {
-  $scope.favourites = [
-    { title: 'Reggae', id: 1 },
-    { title: 'Chill', id: 2 },
-    { title: 'Dubstep', id: 3 },
-    { title: 'Indie', id: 4 },
-    { title: 'Rap', id: 5 },
-    { title: 'Cowbell', id: 6 }
-  ];
-  $scope.listCanSwipe = true;
-})
+.controller('SearchCtrl', ['$scope', 'getCities', 'favList', function($scope, getCities, favList) {
+
+
+  getCities.success(function(data) {
+    $scope.cities = data;
+  })
+
+  favList.get()
+
+  $scope.faveCities = favList.list;
+
+  $scope.toggle = function(item) {
+    favList.toggle(item);
+  }
+
+  $scope.isFave = function(item) {
+    return favList.check(item);
+  }
+
+}])
 
 .controller('WeatherCtrl', function($scope, $stateParams) {
 });
