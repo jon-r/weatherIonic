@@ -1,7 +1,7 @@
 <ion-view view-title="Search">
   <ion-content >
 
-    <ion-list type="list-inset" class="">
+    <ion-list type="list-inset" class="" >
 
       <li class="item item-input-inset">
           <label class="item-input-wrapper">
@@ -21,7 +21,7 @@
       <ion-item class="item-button-right" ng-show="search.valueIn.length > 2" ng-repeat="city in cities | orderBy: 'name' | filter:search.valueIn | limitTo: 10" >
         <a href="#app/weather/{{city.id}}">{{city.name}} {{city.name2}}</a>
         <button class="button button-clear" ng-click="toggle(city)"
-                ng-class="isFave(city)?'button-energized':''">
+                ng-class="isFave(city)?'button-energized':'button-light'">
           <i class="icon ion-android-star" ></i>
         </button>
       </ion-item>

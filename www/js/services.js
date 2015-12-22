@@ -13,23 +13,26 @@ angular.module('jrWeather.services', [])
 .service('favList', ['$window', 'objInArray', function($window, objInArray) {
   var out = {
     list : [],
+
     toggle : function(item) {
       if (out.check(item)) {
         var i = out.list.indexOf(item)
         out.list.splice(i,1);
         out.save();
-
       } else {
         out.list.push({id : item.id, name: item.name, name2: item.name2});
         out.save();
       }
     },
+
     save : function() {
       $window.localStorage['faves'] = JSON.stringify(out.list);
     },
+
     get : function(data) {
       out.list = JSON.parse($window.localStorage['faves'] || '[]');
     },
+
     check : function(item) {
       return objInArray(item, out.list);
     }

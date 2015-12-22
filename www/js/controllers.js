@@ -43,12 +43,11 @@ angular.module('jrWeather.controllers', ['jrWeather.services'])
 
 .controller('SearchCtrl', ['$scope', 'getCities', 'favList', function($scope, getCities, favList) {
 
+  favList.get()
 
   getCities.success(function(data) {
     $scope.cities = data;
   })
-
-  favList.get()
 
   $scope.faveCities = favList.list;
 
