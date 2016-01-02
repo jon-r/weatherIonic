@@ -1,4 +1,6 @@
-/*weather app overides of ionic classes*/
+
+
+/*weather app overides of ionic classes
 .grade-b .menu-content,
 .grade-c .menu-content {
   border-right: 1px solid darken($positive, 20%);
@@ -6,3 +8,22 @@
 }
 
 /*weather app new elements*/
+
+.forecast-container {
+//  border:solid green 1px;
+  position:absolute;
+  width:100%;
+}
+.forecast-float {
+  width:200%;
+ // height:100%;
+}
+.forecast-tile {
+  float:left;
+  padding-top: #{$bar-height * 3};
+  width:50%;
+  height: 100vh;
+  //height:300px;
+  background: linear-gradient(to left, black, white );
+//  border:solid red 2px;
+}

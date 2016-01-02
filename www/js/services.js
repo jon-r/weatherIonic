@@ -2,12 +2,57 @@ angular.module('jrWeather.services', [])
 
 .service('getCities', ['$http', function($http) {
   return $http.get('data/cities.json')
-    .success(function(data) {
-      return data;
+}])
+
+.service('getWeather', ['$http', function($http) {
+  return $http.get('data/weather.json')
+}])
+
+.service('getMet', ['$http', function ($http) {
+  return function (ID) {
+    return $http({
+      method: 'GET',
+      url: 'http://datapoint.metoffice.gov.uk/public/data/val/wxfcs/all/json/'+ID,
+      params: {
+        res: 'daily',
+        key: '1557995e-17dd-41ff-9ed9-2803b0328aa0',
+      }
     })
-    .error(function(err) {
-      return err;
-    })
+  }
+ }])
+
+.service('weatherInit', ['getWeather', function() {
+
+  var out = {
+    tabs : [],
+    weather :[],
+
+    go: function(data) {
+      j=data.Period.length;
+      for (i=0;i<j;i++) {
+        out.tabs[i] = {
+          date: data.Period[i].value,
+          icon: 'weather3' //temp
+        }
+      }
+    },
+
+    setIcon : function(data) {
+
+    },
+
+    get : function() {
+
+    }
+/*    set : function(data) {
+      out.split(data.Period);
+      //return out.days;
+    }*/
+
+
+  }
+
+  return out;
 }])
 
 .service('favList', ['$window', 'objInArray', function($window, objInArray) {
@@ -49,3 +94,11 @@ angular.module('jrWeather.services', [])
     return false;
   }
 }])
+
+//because metoffice timestamps are baddys
+.filter('isoFix', function() {
+  return function(input) {
+    input = input || 0;
+    return input.replace("Z","");
+  }
+});

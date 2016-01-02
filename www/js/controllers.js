@@ -41,12 +41,15 @@ angular.module('jrWeather.controllers', ['jrWeather.services'])
   };
 })
 
-.controller('SearchCtrl', ['$scope', 'getCities', 'favList', function($scope, getCities, favList) {
+.controller('SearchCtrl', [
+  '$scope', 'getCities', 'favList', function($scope, getCities, favList) {
 
   favList.get()
 
-  getCities.success(function(data) {
-    $scope.cities = data;
+  getCities.then(function(result) {
+    $scope.cities = result.data;
+  }, function(err) {
+      console.log(err);
   })
 
   $scope.faveCities = favList.list;
@@ -61,5 +64,23 @@ angular.module('jrWeather.controllers', ['jrWeather.services'])
 
 }])
 
-.controller('WeatherCtrl', function($scope, $stateParams) {
-});
+.controller('WeatherCtrl', [
+  '$scope', '$stateParams', 'getMet', 'weatherInit',
+  function ($scope, $stateParams, getMet, weatherInit) {
+
+    getMet($stateParams.cityID).then(function (result) {
+
+      $scope.get = result.data.SiteRep.DV.Location;
+      weatherInit.go($scope.get);
+      $scope.tabs = weatherInit.tabs;
+
+    }, function (err) {
+      console.log(err);
+    })
+
+    $scope.tabIndex = 0;
+
+    $scope.makeActive = function(tabScope) {
+
+    }
+}]);

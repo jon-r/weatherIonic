@@ -62,7 +62,7 @@ angular.module('jrWeather', ['ionic', 'jrWeather.controllers'])
     })
 
     .state('app.single', {
-      url: '/weather/:cityId',
+      url: '/weather/:cityID',
       views: {
         'menuContent': {
           templateUrl: 'templates/weather.html',
