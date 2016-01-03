@@ -65,22 +65,30 @@ angular.module('jrWeather.controllers', ['jrWeather.services'])
 }])
 
 .controller('WeatherCtrl', [
-  '$scope', '$stateParams', 'getMet', 'weatherInit',
-  function ($scope, $stateParams, getMet, weatherInit) {
+  '$scope', '$stateParams', 'getMet', 'weatherInfo',
+  function ($scope, $stateParams, getMet, weatherInfo) {
+
+    $scope.index = 0;
 
     getMet($stateParams.cityID).then(function (result) {
 
       $scope.get = result.data.SiteRep.DV.Location;
-      weatherInit.go($scope.get);
-      $scope.tabs = weatherInit.tabs;
+      weatherInfo.start($scope.get);
+      $scope.tabs = weatherInfo.tabs;
+      $scope.view = weatherInfo.view(0);
 
     }, function (err) {
       console.log(err);
     })
 
-    $scope.tabIndex = 0;
 
-    $scope.makeActive = function(tabScope) {
+    $scope.makeActive = function (index) {
+      $scope.index = index
+      $scope.view = weatherInfo.view(index);
+      //console.log($scope.view)
+    }
 
+    $scope.isActive = function (index) {
+      return index == $scope.index;
     }
 }]);

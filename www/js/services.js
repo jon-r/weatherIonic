@@ -1,14 +1,14 @@
 angular.module('jrWeather.services', [])
 
-.service('getCities', ['$http', function($http) {
+.service('getCities', function($http) {
   return $http.get('data/cities.json')
-}])
+})
 
-.service('getWeather', ['$http', function($http) {
+.service('getWeather', function($q, $http) {
   return $http.get('data/weather.json')
-}])
+})
 
-.service('getMet', ['$http', function ($http) {
+.service('getMet', function ($http) {
   return function (ID) {
     return $http({
       method: 'GET',
@@ -19,30 +19,53 @@ angular.module('jrWeather.services', [])
       }
     })
   }
- }])
+ })
 
-.service('weatherInit', ['getWeather', function() {
+.service('weatherInfo', function(getWeather) {
+
+  var today = [],
+      weather = {},
+      weatherSpec = [];
 
   var out = {
+    data : {},
     tabs : [],
-    weather :[],
 
-    go: function(data) {
+
+    start: function(data) {
+
+      out.get();
+
       j=data.Period.length;
       for (i=0;i<j;i++) {
         out.tabs[i] = {
           date: data.Period[i].value,
-          icon: 'weather3' //temp
+          icon: data.Period[i].Rep[0].W
         }
       }
-    },
-
-    setIcon : function(data) {
-
+      reports = data.Period;
+     // http://stackoverflow.com/questions/18752222/waiting-for-a-promise
     },
 
     get : function() {
 
+      getWeather.then(function(result) {
+        weatherSpec = result.data;
+      }, function(err) {
+        console.log(err);
+      })
+    },
+
+    view : function(index) {
+
+      weather = {
+        date : reports[index].value,
+        imgs : weatherSpec[reports[index].Rep[0].W]
+      }
+
+      //temp
+      console.log(weather.imgs)
+      return weather;
     }
 /*    set : function(data) {
       out.split(data.Period);
@@ -53,9 +76,9 @@ angular.module('jrWeather.services', [])
   }
 
   return out;
-}])
+})
 
-.service('favList', ['$window', 'objInArray', function($window, objInArray) {
+.service('favList', function($window, objInArray) {
   var out = {
     list : [],
 
@@ -83,7 +106,7 @@ angular.module('jrWeather.services', [])
     }
   };
   return out;
-}])
+})
 
 .service('objInArray', [function() {
   return function (needle, haystack) {
@@ -98,7 +121,7 @@ angular.module('jrWeather.services', [])
 //because metoffice timestamps are baddys
 .filter('isoFix', function() {
   return function(input) {
-    input = input || 0;
+    input = input || "";
     return input.replace("Z","");
   }
 });
