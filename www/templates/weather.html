@@ -11,14 +11,14 @@
 
 <!--  <ion-content class="has-tabs">-->
 
-  <ion-scroll paging="true" direction="x" class="forecast-container has-tabs has-header" >
+  <ion-scroll paging="true" direction="x"
+              class="forecast-container has-tabs has-header" >
      <div class="forecast-float" style="">
 
-      <section class="forecast-tile">
-        DAY {{view.date | isoFix | date: "EEE dd MMM"}}
-      </section>
-      <section class="forecast-tile" >
-NIGHT
+      <section class="forecast-tile" ng-repeat="report in view.imgs">
+        {{view.date | isoFix | date: "EEE dd MMM"}}<br>
+        {{report.name}}<br>
+        {{view.period[$index].$}}
       </section>
     </div>
   </ion-scroll>

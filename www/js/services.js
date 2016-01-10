@@ -1,82 +1,150 @@
 angular.module('jrWeather.services', [])
 
-.service('getCities', function($http) {
-  return $http.get('data/cities.json')
-})
+.service('getMe', function($http) {
+  return {
+    weather : function() {
+      return $http.get('data/weather.json').then(function(success) {
 
-.service('getWeather', function($q, $http) {
-  return $http.get('data/weather.json')
-})
+        return success.data.vals;
 
-.service('getMet', function ($http) {
-  return function (ID) {
-    return $http({
-      method: 'GET',
-      url: 'http://datapoint.metoffice.gov.uk/public/data/val/wxfcs/all/json/'+ID,
-      params: {
-        res: 'daily',
-        key: '1557995e-17dd-41ff-9ed9-2803b0328aa0',
-      }
-    })
-  }
- })
-
-.service('weatherInfo', function(getWeather) {
-
-  var today = [],
-      weather = {},
-      weatherSpec = [];
-
-  var out = {
-    data : {},
-    tabs : [],
-
-
-    start: function(data) {
-
-      out.get();
-
-      j=data.Period.length;
-      for (i=0;i<j;i++) {
-        out.tabs[i] = {
-          date: data.Period[i].value,
-          icon: data.Period[i].Rep[0].W
-        }
-      }
-      reports = data.Period;
-     // http://stackoverflow.com/questions/18752222/waiting-for-a-promise
-    },
-
-    get : function() {
-
-      getWeather.then(function(result) {
-        weatherSpec = result.data;
       }, function(err) {
         console.log(err);
       })
     },
+    cities : function() {
+      return $http.get('data/cities.json').then(function(success) {
 
-    view : function(index) {
+        return success.data;
 
-      weather = {
-        date : reports[index].value,
-        imgs : weatherSpec[reports[index].Rep[0].W]
+      }, function(err) {
+        console.log(err);
+      })
+    },
+    met : function(ID) {
+      return $http({
+        method: 'GET',
+        url: 'http://datapoint.metoffice.gov.uk/public/data/val/wxfcs/all/json/'+ID,
+        params: {
+          res: 'daily',
+          key: '1557995e-17dd-41ff-9ed9-2803b0328aa0',
+        }
+      }).then(function(success) {
+
+        return success.data;
+
+      }, function(err) {
+        console.log(err);
+      })
+    }
+  };
+})
+
+.service('weatherInfo', function (getMe, $q) {
+
+  var out = {
+    tabs: [],
+    period: {},
+    //   view: {},
+    //period: {},
+    weather: [],
+
+    start: function (id) {
+      var report = getMe.met(id),
+          weather = getMe.weather();
+
+      return $q.all([report,weather]).then(function(results) {
+
+        out.period = results[0].SiteRep.DV.Location.Period;
+
+        j = out.period.length;
+        for (i = 0; i < j; i++) {
+          out.tabs[i] = {
+            date: out.period[i].value,
+            icon: out.period[i].Rep[0].W
+          }
+        }
+        out.weather = results[1];
+      })
+    },
+
+    view: function (index) {
+
+      var viewInfo = out.period[index];
+      //TEMP
+      return {
+        date: viewInfo.value,
+        period: viewInfo.Rep,
+        imgs: out.setImg(viewInfo.Rep)
       }
 
-      //temp
-      console.log(weather.imgs)
-      return weather;
-    }
-/*    set : function(data) {
-      out.split(data.Period);
-      //return out.days;
-    }*/
+    },
 
+    setImg: function (report) {
+      var img = [];
+      report.forEach(function (el, i) {
+        //if (el.$ == 'Day') {
+        var detail = out.weather[el.W],
+          tempFeels = (el.$ == 'Day') ? el.FDm : el.FNm,
+          char = detail.ch;
+        if (detail.t) {
+          switch (true) {
+          case (tempFeels < 2):
+            char = char + 1
+            break;
+          case (tempFeels < 12):
+            char = char + 2;
+            break;
+          case (tempFeels < 20):
+            char = char + 3;
+            break;
+          case (tempFeels < 30):
+            char = char + 4;
+            break;
+          default:
+            char = char + 5;
+            break;
+          }
+        } else if (detail.t && el.S > 20) {
+          char = char + 1;
+        };
+
+        img[i] = {
+          bg: 'bg_' + el.$ + detail.bg,
+          char: 'char_' + char,
+          prop: detail.p,
+          density: detail.pD,
+          name : detail.n
+        }
+
+      })
+      return img;
+
+
+    }
 
   }
-
   return out;
 })
+
+/*
+char = personBase + tempMod + windMod
+bgLevel = cloudLevel
+bgProp = report.$
+foreGround = foreLvl
+foreProp = foreProp
+forePropAngle = report.wind
+*/
+
+/*.service('setWeather', function(between) {
+  return function(viewData) {
+
+      day : {
+
+      }
+    }
+  }
+})*/
+
 
 .service('favList', function($window, objInArray) {
   var out = {
@@ -108,7 +176,7 @@ angular.module('jrWeather.services', [])
   return out;
 })
 
-.service('objInArray', [function() {
+.service('objInArray', function() {
   return function (needle, haystack) {
     var length = haystack.length;
     for (var i = 0; i < length; i++) {
@@ -116,7 +184,13 @@ angular.module('jrWeather.services', [])
     }
     return false;
   }
-}])
+})
+
+/*.service('between', function() {
+  return function(val,min,max) {
+    return val >= min && val < max;
+  }
+})*/
 
 //because metoffice timestamps are baddys
 .filter('isoFix', function() {

@@ -1,241 +1,43 @@
-[{
-    "name":"Clear night",
-    "tempMod":1,
-    "windMod":0,
-    "personBase":1,
-    "rainLvl":0,
-    "cloudLvl":0,
-    "extra":""
-  },{
-    "name":"Sunny day",
-    "tempMod":1,
-    "windMod":0,
-    "personBase":1,
-    "rainLvl":0,
-    "cloudLvl":0,
-    "extra":""
-  },{
-    "name":"Partly cloudy (night)",
-    "tempMod":1,
-    "windMod":0,
-    "personBase":1,
-    "rainLvl":0,
-    "cloudLvl":2,
-    "extra":""
-  },{},{
-    "name":"Partly cloudy (day)",
-    "tempMod":1,
-    "windMod":0,
-    "personBase":1,
-    "rainLvl":0,
-    "cloudLvl":2,
-    "extra":""
-  },{
-    "name":"Mist",
-    "tempMod":1,
-    "windMod":0,
-    "personBase":1,
-    "rainLvl":0,
-    "cloudLvl":2,
-    "extra":"fog1"
-  },{
-    "name":"Fog",
-    "tempMod":1,
-    "windMod":0,
-    "personBase":1,
-    "rainLvl":0,
-    "cloudLvl":3,
-    "extra":"fog2"
-  },{
-    "name":"Cloudy",
-    "tempMod":1,
-    "windMod":0,
-    "personBase":1,
-    "rainLvl":0,
-    "cloudLvl":2,
-    "extra":""
-  },{
-    "name":"Overcast",
-    "tempMod":1,
-    "windMod":0,
-    "personBase":1,
-    "rainLvl":0,
-    "cloudLvl":3,
-    "extra":""
-  },{
-    "name":"Light rain shower (night)",
-    "tempMod":0,
-    "windMod":0,
-    "personBase":6,
-    "rainLvl":1,
-    "cloudLvl":2,
-    "extra":""
-  },{
-    "name":"Light rain shower (day)",
-    "tempMod":0,
-    "windMod":0,
-    "personBase":6,
-    "rainLvl":1,
-    "cloudLvl":2,
-    "extra":""
-  },{
-    "name":"Drizzle",
-    "tempMod":0,
-    "windMod":0,
-    "personBase":6,
-    "rainLvl":1,
-    "cloudLvl":3,
-    "extra":""
-  },{
-    "name":"Light rain",
-    "tempMod":0,
-    "windMod":0,
-    "personBase":6,
-    "rainLvl":1,
-    "cloudLvl":2,
-    "extra":""
-  },{
-    "name":"Heavy rain shower (night)",
-    "tempMod":0,
-    "windMod":1,
-    "personBase":7,
-    "rainLvl":2,
-    "cloudLvl":4,
-    "extra":""
-  },{
-    "name":"Heavy rain shower (day)",
-    "tempMod":0,
-    "windMod":1,
-    "personBase":7,
-    "rainLvl":2,
-    "cloudLvl":4,
-    "extra":""
-  },{
-    "name":"Heavy rain",
-    "tempMod":0,
-    "windMod":1,
-    "personBase":7,
-    "rainLvl":2,
-    "cloudLvl":4,
-    "extra":""
-  },{
-    "name":"Sleet shower (night)",
-    "tempMod":0,
-    "windMod":1,
-    "personBase":7,
-    "rainLvl":1,
-    "cloudLvl":2,
-    "extra":"snow1"
-  },{
-    "name":"Sleet shower (day)",
-    "tempMod":0,
-    "windMod":1,
-    "personBase":7,
-    "rainLvl":1,
-    "cloudLvl":2,
-    "extra":"snow1"
-  },{
-    "name":"Sleet",
-    "tempMod":0,
-    "windMod":1,
-    "personBase":7,
-    "rainLvl":1,
-    "cloudLvl":2,
-    "extra":"snow1"
-  },{
-    "name":"Hail shower (night)",
-    "tempMod":0,
-    "windMod":1,
-    "personBase":7,
-    "rainLvl":2,
-    "cloudLvl":3,
-    "extra":"hail"
-  },{
-    "name":"Hail shower (day)",
-    "tempMod":0,
-    "windMod":1,
-    "personBase":8,
-    "rainLvl":2,
-    "cloudLvl":3,
-    "extra":"hail"
-  },{
-    "name":"Hail",
-    "tempMod":0,
-    "windMod":1,
-    "personBase":8,
-    "rainLvl":2,
-    "cloudLvl":3,
-    "extra":"hail"
-  },{
-    "name":"Light snow shower (night)",
-    "tempMod":1,
-    "windMod":0,
-    "personBase":5,
-    "rainLvl":0,
-    "cloudLvl":2,
-    "extra":"snow1"
-  },{
-    "name":"Light snow shower (day)",
-    "tempMod":1,
-    "windMod":0,
-    "personBase":5,
-    "rainLvl":0,
-    "cloudLvl":2,
-    "extra":"snow1"
-  },{
-    "name":"Light snow",
-    "tempMod":1,
-    "windMod":0,
-    "personBase":5,
-    "rainLvl":0,
-    "cloudLvl":2,
-    "extra":"snow1"
-  },{
-    "name":"Heavy snow shower (night)",
-    "tempMod":0,
-    "windMod":0,
-    "personBase":9,
-    "rainLvl":1,
-    "cloudLvl":3,
-    "extra":"snow2"
-  },{
-    "name":"Heavy snow shower (day)",
-    "tempMod":0,
-    "windMod":0,
-    "personBase":9,
-    "rainLvl":1,
-    "cloudLvl":3,
-    "extra":"snow2"
-  },{
-    "name":"Heavy snow",
-    "tempMod":0,
-    "windMod":0,
-    "personBase":9,
-    "rainLvl":1,
-    "cloudLvl":3,
-    "extra":"snow2"
-  },{
-    "name":"Thunder shower (night)",
-    "tempMod":0,
-    "windMod":0,
-    "personBase":9,
-    "rainLvl":2,
-    "cloudLvl":4,
-    "extra":"lightning"
-  },{
-    "name":"Thunder shower (day)",
-    "tempMod":0,
-    "windMod":0,
-    "personBase":9,
-    "rainLvl":2,
-    "cloudLvl":4,
-    "extra":"lightning"
-  },{
-    "name":"Thunder",
-    "tempMod":0,
-    "windMod":0,
-    "personBase":9,
-    "rainLvl":2,
-    "cloudLvl":4,
-    "extra":"lightning"
-  }]
+{
+  "key": {
+  "n":"name",
+  "t":"tempModifier",
+  "w":"windModifier",
+  "ch":"charBase",
+  "bg":"bgDensity",
+  "p":"precipitation",
+  "pD":"precipDensity"
+},
+"vals": [
+  {"n":"Clear night","t":1,"w":0,"ch":1,"pD":0,"bg":0,"p":null},
+  {"n":"Sunny day","t":1,"w":0,"ch":1,"pD":0,"bg":0,"p":null},{},
+  {"n":"Partly cloudy (night)","t":1,"w":0,"ch":1,"pD":0,"bg":2,"p":null},
+  {"n":"Partly cloudy (day)","t":1,"w":0,"ch":1,"pD":0,"bg":2,"p":null},
+  {"n":"Mist","t":1,"w":0,"ch":1,"pD":1,"bg":2,"p":"fog"},
+  {"n":"Fog","t":1,"w":0,"ch":1,"pD":2,"bg":3,"p":"fog"},
+  {"n":"Cloudy","t":1,"w":0,"ch":1,"pD":0,"bg":2,"p":null},
+  {"n":"Overcast","t":1,"w":0,"ch":1,"pD":0,"bg":3,"p":null},
+  {"n":"Light rain shower (night)","t":0,"w":0,"ch":6,"pD":1,"bg":2,"p":"rain"},
+  {"n":"Light rain shower (day)","t":0,"w":0,"ch":6,"pD":1,"bg":2,"p":"rain"},
+  {"n":"Drizzle","t":0,"w":0,"ch":6,"pD":2,"bg":3,"p":"rain"},
+  {"n":"Light rain","t":0,"w":0,"ch":6,"pD":1,"bg":2,"p":"rain"},
+  {"n":"Heavy rain shower (night)","t":0,"w":1,"ch":7,"pD":3,"bg":4,"p":"rain"},
+  {"n":"Heavy rain shower (day)","t":0,"w":1,"ch":7,"pD":3,"bg":4,"p":"rain"},
+  {"n":"Heavy rain","t":0,"w":1,"ch":7,"pD":3,"bg":4,"p":"rain"},
+  {"n":"Sleet shower (night)","t":0,"w":1,"ch":7,"pD":2,"bg":2,"p":"sleet"},
+  {"n":"Sleet shower (day)","t":0,"w":1,"ch":7,"pD":2,"bg":2,"p":"sleet"},
+  {"n":"Sleet","t":0,"w":1,"ch":7,"pD":2,"bg":2,"p":"sleet"},
+  {"n":"Hail shower (night)","t":0,"w":1,"ch":7,"pD":2,"bg":3,"p":"hail"},
+  {"n":"Hail shower (day)","t":0,"w":1,"ch":8,"pD":2,"bg":3,"p":"hail"},
+  {"n":"Hail","t":0,"w":1,"ch":8,"pD":2,"bg":3,"p":"hail"},
+  {"n":"Light snow shower (night)","t":1,"w":0,"ch":5,"pD":1,"bg":2,"p":"snow"},
+  {"n":"Light snow shower (day)","t":1,"w":0,"ch":5,"pD":1,"bg":2,"p":"snow"},
+  {"n":"Light snow","t":1,"w":0,"ch":5,"pD":1,"bg":2,"p":"snow"},
+  {"n":"Heavy snow shower (night)","t":0,"w":0,"ch":9,"pD":2,"bg":3,"p":"snow"},
+  {"n":"Heavy snow shower (day)","t":0,"w":0,"ch":9,"pD":2,"bg":3,"p":"snow"},
+  {"n":"Heavy snow","t":0,"w":0,"ch":9,"pD":2,"bg":3,"p":"snow"},
+  {"n":"Thunder shower (night)","t":0,"w":0,"ch":9,"pD":3,"bg":4,"p":"lightning"},
+  {"n":"Thunder shower (day)","t":0,"w":0,"ch":9,"pD":3,"bg":4,"p":"lightning"},
+  {"n":"Thunder","t":0,"w":0,"ch":9,"pD":3,"bg":4,"p":"lightning"}
+]
+}

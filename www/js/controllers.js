@@ -2,7 +2,7 @@ angular.module('jrWeather.controllers', ['jrWeather.services'])
 
 .controller('AppCtrl', function($scope, $ionicModal, $timeout) {
 
-  // With the new view caching in Ionic, Controllers are only called
+/*  // With the new view caching in Ionic, Controllers are only called
   // when they are recreated or on app start, instead of every page change.
   // To listen for when this page is active (for example, to refresh data),
   // listen for the $ionicView.enter event:
@@ -38,18 +38,17 @@ angular.module('jrWeather.controllers', ['jrWeather.services'])
     $timeout(function() {
       $scope.closeLogin();
     }, 1000);
-  };
+  };*/
 })
-
 .controller('SearchCtrl', [
-  '$scope', 'getCities', 'favList', function($scope, getCities, favList) {
+  '$scope', 'getMe', 'favList', function($scope, getMe, favList) {
 
   favList.get()
 
-  getCities.then(function(result) {
-    $scope.cities = result.data;
+  getMe.cities().then(function(result) {
+    $scope.cities = result;
   }, function(err) {
-      console.log(err);
+    console.log(err);
   })
 
   $scope.faveCities = favList.list;
@@ -65,30 +64,25 @@ angular.module('jrWeather.controllers', ['jrWeather.services'])
 }])
 
 .controller('WeatherCtrl', [
-  '$scope', '$stateParams', 'getMet', 'weatherInfo',
-  function ($scope, $stateParams, getMet, weatherInfo) {
+  '$scope', '$ionicScrollDelegate', '$stateParams', 'weatherInfo',
+  function ($scope, $ionicScrollDelegate, $stateParams, weatherInfo) {
 
-    $scope.index = 0;
+  $scope.index = 0;
 
-    getMet($stateParams.cityID).then(function (result) {
-
-      $scope.get = result.data.SiteRep.DV.Location;
-      weatherInfo.start($scope.get);
-      $scope.tabs = weatherInfo.tabs;
-      $scope.view = weatherInfo.view(0);
-
-    }, function (err) {
-      console.log(err);
-    })
+  weatherInfo.start($stateParams.cityID).then(function () {
+    $scope.view = weatherInfo.view($scope.index);
+    $scope.tabs = weatherInfo.tabs;
+  });
 
 
-    $scope.makeActive = function (index) {
-      $scope.index = index
-      $scope.view = weatherInfo.view(index);
-      //console.log($scope.view)
-    }
+  $scope.makeActive = function (index) {
+    $scope.index = index
+    $scope.view = weatherInfo.view(index);
+    $ionicScrollDelegate.scrollTop(true);
+     console.log($scope.view)
+  }
 
-    $scope.isActive = function (index) {
-      return index == $scope.index;
-    }
+  $scope.isActive = function (index) {
+    return index == $scope.index;
+  }
 }]);
