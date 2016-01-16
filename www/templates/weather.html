@@ -4,7 +4,7 @@
   <ul class="tabs tabs-positive tabs-striped tabs-icon-top" >
     <li ng-repeat="tab in tabs" ng-click="makeActive($index)"
         class="tab-item" ng-class="{active:isActive($index)}"  >
-      <i class="icon jr-icon i-{{tab.icon}}"></i>
+      <i class="jr-icon i-{{tab.icon}}"></i>
       {{tab.date | isoFix | date: 'EEE'}}
     </li>
   </ul>

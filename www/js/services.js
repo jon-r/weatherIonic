@@ -21,9 +21,11 @@ angular.module('jrWeather.services', [])
       })
     },
     met : function(ID) {
+      var url = (ID == 'typical') ?
+          'data/typical.json' : 'http://datapoint.metoffice.gov.uk/public/data/val/wxfcs/all/json/'+ID;
       return $http({
         method: 'GET',
-        url: 'http://datapoint.metoffice.gov.uk/public/data/val/wxfcs/all/json/'+ID,
+        url: url,
         params: {
           res: 'daily',
           key: '1557995e-17dd-41ff-9ed9-2803b0328aa0',

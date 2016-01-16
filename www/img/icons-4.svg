@@ -1,5 +1,6 @@
 
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 200" >
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+     viewBox="0 0 240 200" >
   <style>
     .moon { fill: #CFE5FC; } .sun { fill: #FCEE88; } .glow { filter: url(#glow); } .snow { fill: #C4DFFF; } .light { opacity: 0.4 } .med { opacity: 0.8 } .cloud {fill: url(#clouded);} .rain { fill: #91CBF5; } .lightning { fill: #FCEEC7; }
   </style>
@@ -9,7 +10,7 @@
       <stop offset="1" stop-color="#BFBFBF"/>
     </linearGradient>
     <filter id="glow">
-      <feGaussianBlur stdDeviation="1" result="blur"/>
+      <feGaussianBlur stdDeviation="2" result="blur"/>
       <feMerge>
         <feMergeNode in="blur"/>
         <feMergeNode in="SourceGraphic"/>
@@ -24,7 +25,7 @@
     <path id="moon" class="moon glow" d="M21.8 5.12c3.33 2.15 5.53 5.88 5.53 10.13 0 6.68-5.4 12.08-12.08 12.08-4.25 0-7.98-2.2-10.13-5.52.9 7.5 7.2 13.2 14.88 13.2 8.28 0 15-6.7 15-15 0-7.6-5.76-13.9-13.2-14.8z"/>
     <use id="moon-2" transform="scale(0.6)" xlink:href="#moon" />
 
-    <circle id="sun" class="sun glow" cx="20" cy="20" r="15"/>
+    <circle id="sun" class="sun glow" cx="20" cy="20" r="14"/>
     <use id="sun-2" transform="scale(0.6)" xlink:href="#sun" />
 
     <path id="snow" class="snow" d="M1 1l1 1.5h-1.6v0.55h1.6l-1 1.5 0.5 0.33 1-1.5 1 1.5 0.5-0.33-1.0-1.5h1.6v-0.55h-1.6l1-1.5l-0.5-0.33-1 1.5-1-1.5z" />
@@ -63,76 +64,26 @@
   </defs>
 
   <g id="clearNight">
-    <use x="120" xlink:href="#moon" />
+    <use xlink:href="#moon" />
   </g>
-  <g id="clearDay">
-    <use xlink:href="#sun" />
+  <g id="sunnyDay" >
+    <use xlink:href="#sun" x="40" />
   </g>
-  <g id="lightSnowNight" transform="translate(200,80)">
-    <use xlink:href="#moon-2" />
-    <use xlink:href="#cloud-1" class="light"/>
-    <use xlink:href="#snow-1" />
-  </g>
-  <g id="lightSnowDay" transform="translate(80,80)">
-    <use xlink:href="#sun-2" />
-    <use xlink:href="#cloud-1" class="light"/>
-    <use xlink:href="#snow-1" />
-  </g>
-  <g id="lightRainNight" transform="translate(200,40)">
-    <use xlink:href="#moon-2" />
-    <use xlink:href="#cloud-1" class="light" />
-    <use xlink:href="#rain-1" class="light" />
-  </g>
-  <g id="LightRainDay" transform="translate(80,40)">
-    <use xlink:href="#sun-2" />
-    <use xlink:href="#cloud-1" class="light" />
-    <use xlink:href="#rain-1" class="light" />
-  </g>
-  <g id="sleetDay" transform="translate(0,40)">
-    <use xlink:href="#sun-2" />
-    <use xlink:href="#cloud-1" class="light" />
-    <use xlink:href="#rain-1" class="light" />
-  </g>
-  <g id="cloudyNight" transform="translate(160)">
+  <g id="cloudyNight" transform="translate(80)">
     <use xlink:href="#moon-2" />
     <use xlink:href="#cloud-1" class="light" />
   </g>
-  <g id="cloudyDay" transform="translate(40)">
+  <g id="cloudyDay" transform="translate(120)">
     <use xlink:href="#sun-2" />
     <use xlink:href="#cloud-1" class="light" />
   </g>
-  <g id="sleetNight" transform="translate(120,40)">
-    <use xlink:href="#moon-2" />
-    <use xlink:href="#cloud-1" class="light" />
-    <use xlink:href="#snow-2" />
-    <use xlink:href="#rain-1" class="light" />
-  </g>
-  <g id="mist" transform="translate(200,120)" class="med cloud">
+  <g id="mist" transform="translate(160)" class="med cloud">
     <use xlink:href="#cloud-1" />
     <use xlink:href="#cloud-2" />
     <path d="M5 28.5h30v2h-30z"/>
     <path d="M5 35h30v2h-30z"/>
   </g>
-  <g id="lightSnow" transform="translate(160,120)">
-    <use xlink:href="#cloud-1" class="med"/>
-    <use xlink:href="#cloud-2" class="med"/>
-    <use xlink:href="#snow-1" />
-  </g>
-  <g id="cloudy" transform="translate(80,120)">
-    <use xlink:href="#cloud-1" class="med"/>
-    <use xlink:href="#cloud-2" class="med"/>
-  </g>
-  <g id="lightRain" transform="translate(40,120)">
-    <use xlink:href="#cloud-1" class="med"/>
-    <use xlink:href="#cloud-2" class="med"/>
-    <use xlink:href="#rain-1" class="light" />
-  </g>
-  <g id="sleet" transform="translate(0,120)">
-    <use xlink:href="#cloud-1" class="light" />
-    <use xlink:href="#snow-2" />
-    <use xlink:href="#rain-1" class="light" />
-  </g>
-  <g id="fog" transform="translate(200,160)" class="med cloud">
+  <g id="fog" transform="translate(200)" class="med cloud">
     <use xlink:href="#cloud-1"/>
     <use xlink:href="#cloud-2"/>
     <use xlink:href="#cloud-3"/>
@@ -140,34 +91,37 @@
     <path d="M5 31h30v2h-30z"/>
     <path d="M5 34h30v2h-30z"/>
   </g>
-  <g id="drizzle" transform="translate(40,160)" >
+  <g id="cloudy" transform="translate(0,40)">
+    <use xlink:href="#cloud-1" class="med"/>
+    <use xlink:href="#cloud-2" class="med"/>
+  </g>
+  <g id="overcast" transform="translate(40,40)">
+    <use xlink:href="#cloud-1" />
+    <use xlink:href="#cloud-2" />
+    <use xlink:href="#cloud-3" />
+  </g>
+  <g id="lightRainNight" transform="translate(80,40)">
+    <use xlink:href="#moon-2" />
+    <use xlink:href="#cloud-1" class="light" />
+    <use xlink:href="#rain-1" class="light" />
+  </g>
+  <g id="LightRainDay" transform="translate(120,40)">
+    <use xlink:href="#sun-2" />
+    <use xlink:href="#cloud-1" class="light" />
+    <use xlink:href="#rain-1" class="light" />
+  </g>
+  <g id="drizzle" transform="translate(160,40)" >
       <use xlink:href="#cloud-1" />
       <use xlink:href="#cloud-2" />
       <use xlink:href="#cloud-3" />
       <use xlink:href="#rain-1" class="light" />
   </g>
-  <g id="overcast" transform="translate(120,120)">
-    <use xlink:href="#cloud-1" />
-    <use xlink:href="#cloud-2" />
-    <use xlink:href="#cloud-3" />
+  <g id="lightRain" transform="translate(200,40)">
+    <use xlink:href="#cloud-1" class="med"/>
+    <use xlink:href="#cloud-2" class="med"/>
+    <use xlink:href="#rain-1" class="light" />
   </g>
-  <g id="heavySnowNight" transform="translate(120,80)">
-    <use xlink:href="#moon-2" />
-    <use xlink:href="#cloud-1" />
-    <use xlink:href="#cloud-2" />
-    <use xlink:href="#cloud-3" />
-    <use xlink:href="#snow-1" />
-    <use xlink:href="#snow-2" />
-  </g>
-  <g id="heavySnowDay" transform="translate(0,80)">
-    <use xlink:href="#sun-2" />
-    <use xlink:href="#cloud-1" />
-    <use xlink:href="#cloud-2" />
-    <use xlink:href="#cloud-3" />
-    <use xlink:href="#snow-1" />
-    <use xlink:href="#snow-2" />
-  </g>
-  <g id="heavyRainNight" transform="translate(160,40)">
+  <g id="heavyRainNight" transform="translate(0,80)">
     <use xlink:href="#moon-2" />
     <use xlink:href="#cloud-1" />
     <use xlink:href="#cloud-2" />
@@ -175,7 +129,7 @@
     <use xlink:href="#rain-1" />
     <use xlink:href="#rain-2"/>
   </g>
-  <g id="heavyRainDay" transform="translate(40,40)">
+  <g id="heavyRainDay" transform="translate(40,80)">
     <use xlink:href="#sun-2" />
     <use xlink:href="#cloud-1" />
     <use xlink:href="#cloud-2" />
@@ -183,7 +137,31 @@
     <use xlink:href="#rain-1" />
     <use xlink:href="#rain-2"/>
   </g>
-  <g id="hailNight" transform="translate(200)">
+  <g id="heavyRain" transform="translate(80,80)">
+    <use xlink:href="#cloud-1" />
+    <use xlink:href="#cloud-2" />
+    <use xlink:href="#cloud-3" />
+    <use xlink:href="#cloud-4" />
+    <use xlink:href="#rain-1" />
+    <use xlink:href="#rain-2"/>
+  </g>
+  <g id="sleetNight" transform="translate(120,80)">
+    <use xlink:href="#moon-2" />
+    <use xlink:href="#cloud-1" class="light" />
+    <use xlink:href="#snow-2" />
+    <use xlink:href="#rain-1" class="light" />
+  </g>
+  <g id="sleetDay" transform="translate(160,80)">
+    <use xlink:href="#sun-2" />
+    <use xlink:href="#cloud-1" class="light" />
+    <use xlink:href="#rain-1" class="light" />
+  </g>
+  <g id="sleet" transform="translate(200,80)">
+    <use xlink:href="#cloud-1" class="light" />
+    <use xlink:href="#snow-2" />
+    <use xlink:href="#rain-1" class="light" />
+  </g>
+  <g id="hailNight" transform="translate(0,120)">
     <use xlink:href="#moon-2" />
     <use xlink:href="#cloud-1" />
     <use xlink:href="#cloud-2" />
@@ -191,7 +169,7 @@
     <use xlink:href="#hail-1" />
     <use xlink:href="#rain-2"/>
   </g>
-  <g id="hailDay" transform="translate(80)">
+  <g id="hailDay" transform="translate(40,120)">
     <use xlink:href="#sun-2" />
     <use xlink:href="#cloud-1" />
     <use xlink:href="#cloud-2" />
@@ -199,7 +177,7 @@
     <use xlink:href="#hail-1" />
     <use xlink:href="#rain-2"/>
   </g>
-  <g id="hail" transform="translate(160,160)">
+  <g id="hail" transform="translate(80,120)">
     <use xlink:href="#cloud-1" />
     <use xlink:href="#cloud-2" />
     <use xlink:href="#cloud-3" />
@@ -207,7 +185,47 @@
     <use xlink:href="#hail-1" />
     <use xlink:href="#rain-2"/>
   </g>
-  <g id="thunder" transform="translate(120,160)">
+  <g id="lightSnowNight" transform="translate(120,120)">
+    <use xlink:href="#moon-2" />
+    <use xlink:href="#cloud-1" class="light"/>
+    <use xlink:href="#snow-1" />
+  </g>
+  <g id="lightSnowDay" transform="translate(160,120)">
+    <use xlink:href="#sun-2" />
+    <use xlink:href="#cloud-1" class="light"/>
+    <use xlink:href="#snow-1" />
+  </g>
+  <g id="lightSnow" transform="translate(200,120)">
+    <use xlink:href="#cloud-1" class="med"/>
+    <use xlink:href="#cloud-2" class="med"/>
+    <use xlink:href="#snow-1" />
+  </g>
+  <g id="heavySnowNight" transform="translate(0,160)">
+    <use xlink:href="#moon-2" />
+    <use xlink:href="#cloud-1" />
+    <use xlink:href="#cloud-2" />
+    <use xlink:href="#cloud-3" />
+    <use xlink:href="#snow-1" />
+    <use xlink:href="#snow-2" />
+  </g>
+  <g id="heavySnowDay" transform="translate(40,160)">
+    <use xlink:href="#sun-2" />
+    <use xlink:href="#cloud-1" />
+    <use xlink:href="#cloud-2" />
+    <use xlink:href="#cloud-3" />
+    <use xlink:href="#snow-1" />
+    <use xlink:href="#snow-2" />
+  </g>
+  <g id="heavySnow" transform="translate(80,160)">
+    <use xlink:href="#cloud-1" />
+    <use xlink:href="#cloud-2" />
+    <use xlink:href="#cloud-3" />
+    <use xlink:href="#cloud-4" />
+    <use xlink:href="#snow-1" />
+    <use xlink:href="#snow-2" />
+  </g>
+  <g id="thunderNight" transform="translate(120,160)">
+    <use xlink:href="#moon-2" />
     <use xlink:href="#cloud-1" />
     <use xlink:href="#cloud-2" />
     <use xlink:href="#cloud-3" />
@@ -216,24 +234,8 @@
     <use xlink:href="#rain-2"/>
     <use xlink:href="#lightning-1" />
   </g>
-  <g id="heavyRain" transform="translate(80,160)">
-    <use xlink:href="#cloud-1" />
-    <use xlink:href="#cloud-2" />
-    <use xlink:href="#cloud-3" />
-    <use xlink:href="#cloud-4" />
-    <use xlink:href="#rain-1" />
-    <use xlink:href="#rain-2"/>
-  </g>
-  <g id="heavySnow" transform="translate(0,160)">
-    <use xlink:href="#cloud-1" />
-    <use xlink:href="#cloud-2" />
-    <use xlink:href="#cloud-3" />
-    <use xlink:href="#cloud-4" />
-    <use xlink:href="#snow-1" />
-    <use xlink:href="#snow-2" />
-  </g>
-  <g id="thunderNight" transform="translate(160,80)">
-    <use xlink:href="#moon-2" />
+  <g id="thunderDay" transform="translate(160,160)">
+    <use xlink:href="#sun-2" />
     <use xlink:href="#cloud-1" />
     <use xlink:href="#cloud-2" />
     <use xlink:href="#cloud-3" />
@@ -242,8 +244,7 @@
     <use xlink:href="#rain-2"/>
     <use xlink:href="#lightning-1" />
   </g>
-  <g id="thunderDay" transform="translate(40,80)">
-    <use xlink:href="#moon-2" />
+  <g id="thunder" transform="translate(200,160)">
     <use xlink:href="#cloud-1" />
     <use xlink:href="#cloud-2" />
     <use xlink:href="#cloud-3" />
@@ -252,4 +253,7 @@
     <use xlink:href="#rain-2"/>
     <use xlink:href="#lightning-1" />
   </g>
+
+
+
 </svg>

@@ -24,18 +24,37 @@
   width:50%;
   height: 100vh;
   //height:300px;
-  background: linear-gradient(to left, black, white );
+  //background: linear-gradient(to left, black, white );
 //  border:solid red 2px;
 }
 
+/*jr-icon setup --------------------------------------------------------------------------------*/
+
+$j-cols : 6;
+$j-rows : 5;
+$jr-icon-scale : 32px;
+
+$j-width : $j-rows * $jr-icon-scale;
+$j-height : $j-cols * $jr-icon-scale;
+$j-icon-count : $j-cols * $j-rows;
+
 .jr-icon {
-  background-size:50%;
-  background-position: center;
-  background-repeat: no-repeat;
+  //background-size:50%;
+  //background-position: center;
+  display: block;
+  height: $jr-icon-scale;
+  width: $jr-icon-scale;
+  margin: 0 auto;
+  background-image: url(/img/icons-4.min.svg);
+  background-size: $j-height $j-width ;
+//  background-repeat: no-repeat;
 }
 
-@for $i from 1 through 30 {
-  .icon.jr-icon.i-#{$i} {
-    background-image: url(/img/weather/#{$i}.svg);
+@for $i from 1 through $j-icon-count {
+  $i : if($i<4,$i - 1,$i);
+  $y: floor($i/($j-rows + 1)) * -$jr-icon-scale;
+  $x: $i % ($j-cols) * -$jr-icon-scale;
+  .i-#{$i} {
+    background-position: $x $y;
   }
 }
