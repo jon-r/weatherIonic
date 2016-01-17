@@ -1,27 +1,25 @@
 <ion-view view-title="{{get.name}}">
 
-
-  <ul class="tabs tabs-positive tabs-striped tabs-icon-top" >
-    <li ng-repeat="tab in tabs" ng-click="makeActive($index)"
-        class="tab-item" ng-class="{active:isActive($index)}"  >
-      <i class="jr-icon i-{{tab.icon}}"></i>
-      {{tab.date | isoFix | date: 'EEE'}}
+  <ul class="tabs tabs-positive tabs-striped tabs-icon-top">
+    <li ng-repeat="tab in tabs" ng-click="makeActive($index)" class="tab-item" ng-class="{active:isActive($index)}">
+      <i class="jr-icon i-{{tab.icon}}"></i> {{tab.date | isoFix | date: 'EEE'}}
     </li>
   </ul>
 
-<!--  <ion-content class="has-tabs">-->
+  <div class="lol" ng-class="float">
+    <!--this is where all the animation will take place-->
+  </div>
 
-  <ion-scroll paging="true" direction="x"
-              class="forecast-container has-tabs has-header" >
-     <div class="forecast-float" style="">
+  <ion-scroll paging="true" direction="x" class="forecast-container has-tabs has-header">
+    <div class="forecast-float" ng-class="float">
 
       <section class="forecast-tile" ng-repeat="report in view.imgs">
-        {{view.date | isoFix | date: "EEE dd MMM"}}<br>
-        {{report.name}}<br>
-        {{view.period[$index].$}}
+        {{view.date | isoFix | date: "EEE dd MMM"}}
+        <br> {{report.name}}
+        <br> {{view.period[$index].$}}
       </section>
     </div>
   </ion-scroll>
-<!--      </ion-content>-->
+
 
 </ion-view>

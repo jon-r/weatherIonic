@@ -72,6 +72,7 @@ angular.module('jrWeather.controllers', ['jrWeather.services'])
   weatherInfo.start($stateParams.cityID).then(function () {
     $scope.view = weatherInfo.view($scope.index);
     $scope.tabs = weatherInfo.tabs;
+    $scope.float = $scope.view.imgs[0].bg;
   });
 
 
@@ -79,7 +80,7 @@ angular.module('jrWeather.controllers', ['jrWeather.services'])
     $scope.index = index
     $scope.view = weatherInfo.view(index);
     $ionicScrollDelegate.scrollTop(true);
-     console.log($scope.view)
+    $scope.float = $scope.view.imgs[0].bg;
   }
 
   $scope.isActive = function (index) {

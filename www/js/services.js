@@ -1,4 +1,4 @@
-angular.module('jrWeather.services', [])
+angular.module('jrWeather.services', ['jrWeather.animations'])
 
 .service('getMe', function($http) {
   return {
