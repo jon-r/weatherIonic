@@ -1,4 +1,4 @@
-angular.module('jrWeather.controllers', ['jrWeather.services'])
+angular.module('jrWeather.controllers', ['jrWeather.services', 'jrWeather.animations'])
 
 .controller('AppCtrl', function($scope, $ionicModal, $timeout) {
 
@@ -64,26 +64,40 @@ angular.module('jrWeather.controllers', ['jrWeather.services'])
 }])
 
 .controller('WeatherCtrl', [
-  '$scope', '$ionicScrollDelegate', '$stateParams', 'weatherInfo',
-  function ($scope, $ionicScrollDelegate, $stateParams, weatherInfo) {
+  '$scope', '$ionicScrollDelegate', '$stateParams', 'weatherInfo', 'vp',
+  function ($scope, $ionicScrollDelegate, $stateParams, weatherInfo, vp) {
 
-  $scope.index = 0;
+    $scope.index = 0; $scope.back = {};
 
-  weatherInfo.start($stateParams.cityID).then(function () {
-    $scope.view = weatherInfo.view($scope.index);
-    $scope.tabs = weatherInfo.tabs;
-    $scope.float = $scope.view.imgs[0].bg;
-  });
+    var timeSet = function(index) {
+     // if (typeof $scope.view !== 'undefined') {
+      $scope.back.day = $scope.view.imgs[0].bg;
+    //  }
+    }
 
 
-  $scope.makeActive = function (index) {
-    $scope.index = index
-    $scope.view = weatherInfo.view(index);
-    $ionicScrollDelegate.scrollTop(true);
-    $scope.float = $scope.view.imgs[0].bg;
-  }
+    weatherInfo.start($stateParams.cityID).then(function () {
+      $scope.view = weatherInfo.view($scope.index);
+      $scope.tabs = weatherInfo.tabs;
+      timeSet();
+    });
 
-  $scope.isActive = function (index) {
-    return index == $scope.index;
-  }
+    $scope.checkTime = function () {
+      var page = vp(),
+        scroll = $ionicScrollDelegate.getScrollPosition(),
+        i = (Math.round(scroll.left / page.w * 100) / 100);
+      $scope.dayView = 'dayView_' + i;
+    }
+
+
+    $scope.makeActive = function (index) {
+      $scope.index = index
+      $scope.view = weatherInfo.view(index);
+      $ionicScrollDelegate.scrollTop();
+      timeSet(0);
+    }
+
+    $scope.isActive = function (index) {
+      return index == $scope.index;
+    }
 }]);

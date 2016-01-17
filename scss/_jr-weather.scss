@@ -28,16 +28,6 @@
 //  border:solid red 2px;
 }
 
-/* background gradients ------------------------------------------------------------------------*/
-/*
-.bg_Day0 {
-  background: red;
-}
-
-.bg_Day2 {
-  background: blue;
-}*/
-
 /*jr-icon setup --------------------------------------------------------------------------------*/
 
 $j-cols : 6;
@@ -60,11 +50,46 @@ $j-icon-count : $j-cols * $j-rows;
 //  background-repeat: no-repeat;
 }
 
-@for $i from 1 through $j-icon-count {
-  $i : if($i<4,$i - 1,$i);
+@for $i from 0 through $j-icon-count {
+  $j : if($i>5,$i + 1,$i);
   $y: floor($i/($j-rows + 1)) * -$jr-icon-scale;
   $x: $i % ($j-cols) * -$jr-icon-scale;
-  .i-#{$i} {
+  .i-#{$j} {
     background-position: $x $y;
   }
 }
+
+/* background gradients ------------------------------------------------------------------------*/
+
+.weather-bg {
+  position: absolute;
+  top:0;
+  left:0;
+  height:100vh;
+  width:100%;
+}
+
+$j-bg-grads : (
+  Day: (#0c0e3a,#0c386b,#0d649d),
+  Night: (#2659ba,#6c9fdb,#afdffa)
+  );
+
+
+@each $time,$colour in $j-bg-grads {
+  .#{$time} {
+    background-image: linear-gradient(nth($colour,1),nth($colour,3));
+  }
+}
+
+/*.bg-0 {
+  filter: saturate(1.5);
+  -webkit-filter: saturate(1.5);
+}
+.bg-2 {
+  filter: saturate(0.8) brightness(1.3);
+  -webkit-filter: saturate(0.8) brightness(1.3);
+}
+.bg-3 {
+  filter: saturate(0.4) brightness(1.6);
+  -webkit-filter: saturate(0.4) brightness(1.6);
+}*/

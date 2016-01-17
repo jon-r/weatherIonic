@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" height="300" width="200">
+  <style>
+    .night {
+      fill: url(#gradNight)
+    }
+    .day {
+      fill: url(#gradDay)
+    }
+    .bg_0 {
+      filter: url(#set_0)
+    }
+    .bg_2 {
+      filter: url(#set_2)
+    }
+    .bg_3 {
+      filter: url(#set_3)
+    }
+  </style>
+  <defs>
+    <linearGradient id="gradNight" gradientUnits="objectBoundingBox" y1="1" x2="0">
+      <stop offset="0" stop-color="#0d649d"/>
+      <stop offset="1" stop-color="#0c0e3a"/>
+    </linearGradient>
+    <linearGradient id="gradDay" gradientUnits="objectBoundingBox" y1="0" x2="1">
+      <stop offset="0" stop-color="#afdffa"/>
+      <stop offset="1" stop-color="#2659ba"/>
+    </linearGradient>
+    <filter id="set_0">
+      <feColorMatrix type="saturate" values="1.5"/>
+    </filter>
+        <filter id="set_2">
+      <feColorMatrix type="saturate" values="0.8"/>
+
+    </filter>
+        <filter id="set_3">
+      <feColorMatrix type="saturate" values="1.5"/>
+    </filter>
+
+  </defs>
+  <rect class="bg_2 night" height="100%" width="100%" />
+</svg>

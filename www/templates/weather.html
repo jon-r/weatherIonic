@@ -6,14 +6,20 @@
     </li>
   </ul>
 
-  <div class="lol" ng-class="float">
-    <!--this is where all the animation will take place-->
+
+  <div class="weather-bg" ng-class="view.imgs[0].bg">
+<!--    this is where all the animation will take place-->
+
   </div>
 
-  <ion-scroll paging="true" direction="x" class="forecast-container has-tabs has-header">
-    <div class="forecast-float" ng-class="float">
 
-      <section class="forecast-tile" ng-repeat="report in view.imgs">
+  <ion-scroll paging="true" direction="x" on-scroll="checkTime()"
+              class="forecast-container has-tabs has-header">
+    <div class="forecast-float">
+
+      <section class="forecast-tile"
+               ng-repeat="report in view.imgs"  >
+
         {{view.date | isoFix | date: "EEE dd MMM"}}
         <br> {{report.name}}
         <br> {{view.period[$index].$}}

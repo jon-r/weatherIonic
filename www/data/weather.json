@@ -10,9 +10,9 @@
 },
 "vals": [
   {"n":"Clear night","t":1,"w":0,"ch":1,"pD":0,"bg":0,"p":null},
-  {"n":"Sunny day","t":1,"w":0,"ch":1,"pD":0,"bg":0,"p":null},{},
+  {"n":"Sunny day","t":1,"w":0,"ch":1,"pD":0,"bg":0,"p":null},
   {"n":"Partly cloudy (night)","t":1,"w":0,"ch":1,"pD":0,"bg":2,"p":null},
-  {"n":"Partly cloudy (day)","t":1,"w":0,"ch":1,"pD":0,"bg":2,"p":null},
+  {"n":"Partly cloudy (day)","t":1,"w":0,"ch":1,"pD":0,"bg":2,"p":null},{},
   {"n":"Mist","t":1,"w":0,"ch":1,"pD":1,"bg":2,"p":"fog"},
   {"n":"Fog","t":1,"w":0,"ch":1,"pD":2,"bg":3,"p":"fog"},
   {"n":"Cloudy","t":1,"w":0,"ch":1,"pD":0,"bg":2,"p":null},

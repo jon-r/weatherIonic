@@ -1,4 +1,4 @@
-angular.module('jrWeather.services', ['jrWeather.animations'])
+angular.module('jrWeather.services', [])
 
 .service('getMe', function($http) {
   return {
@@ -111,14 +111,14 @@ angular.module('jrWeather.services', ['jrWeather.animations'])
         };
 
         img[i] = {
-          bg: 'bg_' + el.$ + detail.bg,
+          bg: [el.$, 'bg-' + detail.bg],
           char: 'char_' + char,
           prop: detail.p,
           density: detail.pD,
           name : detail.n
         }
-
       })
+
       return img;
 
 
@@ -185,6 +185,16 @@ forePropAngle = report.wind
       if (haystack[i].id == needle.id) return true;
     }
     return false;
+  }
+})
+
+.service('vp', function ($window) {
+  var win = $window;
+  return function() {
+    return {
+      h : win.innerHeight,
+      w : win.innerWidth
+    }
   }
 })
 

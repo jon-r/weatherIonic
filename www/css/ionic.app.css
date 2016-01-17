@@ -9756,15 +9756,6 @@ a.button {
   width: 50%;
   height: 100vh; }
 
-/* background gradients ------------------------------------------------------------------------*/
-/*
-.bg_Day0 {
-  background: red;
-}
-
-.bg_Day2 {
-  background: blue;
-}*/
 /*jr-icon setup --------------------------------------------------------------------------------*/
 .jr-icon {
   display: block;
@@ -9783,83 +9774,113 @@ a.button {
 .i-2 {
   background-position: -64px 0px; }
 
+.i-3 {
+  background-position: -96px 0px; }
+
 .i-4 {
   background-position: -128px 0px; }
 
 .i-5 {
   background-position: -160px 0px; }
 
-.i-6 {
+.i-7 {
   background-position: 0px -32px; }
 
-.i-7 {
+.i-8 {
   background-position: -32px -32px; }
 
-.i-8 {
+.i-9 {
   background-position: -64px -32px; }
 
-.i-9 {
+.i-10 {
   background-position: -96px -32px; }
 
-.i-10 {
+.i-11 {
   background-position: -128px -32px; }
 
-.i-11 {
+.i-12 {
   background-position: -160px -32px; }
 
-.i-12 {
+.i-13 {
   background-position: 0px -64px; }
 
-.i-13 {
+.i-14 {
   background-position: -32px -64px; }
 
-.i-14 {
+.i-15 {
   background-position: -64px -64px; }
 
-.i-15 {
+.i-16 {
   background-position: -96px -64px; }
 
-.i-16 {
+.i-17 {
   background-position: -128px -64px; }
 
-.i-17 {
+.i-18 {
   background-position: -160px -64px; }
 
-.i-18 {
+.i-19 {
   background-position: 0px -96px; }
 
-.i-19 {
+.i-20 {
   background-position: -32px -96px; }
 
-.i-20 {
+.i-21 {
   background-position: -64px -96px; }
 
-.i-21 {
+.i-22 {
   background-position: -96px -96px; }
 
-.i-22 {
+.i-23 {
   background-position: -128px -96px; }
 
-.i-23 {
+.i-24 {
   background-position: -160px -96px; }
 
-.i-24 {
+.i-25 {
   background-position: 0px -128px; }
 
-.i-25 {
+.i-26 {
   background-position: -32px -128px; }
 
-.i-26 {
+.i-27 {
   background-position: -64px -128px; }
 
-.i-27 {
+.i-28 {
   background-position: -96px -128px; }
 
-.i-28 {
+.i-29 {
   background-position: -128px -128px; }
 
-.i-29 {
+.i-30 {
   background-position: -160px -128px; }
 
-.i-30 {
+.i-31 {
   background-position: 0px -160px; }
+
+/* background gradients ------------------------------------------------------------------------*/
+.weather-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100%; }
+
+.Day {
+  background-image: linear-gradient(#0c0e3a, #0d649d); }
+
+.Night {
+  background-image: linear-gradient(#2659ba, #afdffa); }
+
+/*.bg-0 {
+  filter: saturate(1.5);
+  -webkit-filter: saturate(1.5);
+}
+.bg-2 {
+  filter: saturate(0.8) brightness(1.3);
+  -webkit-filter: saturate(0.8) brightness(1.3);
+}
+.bg-3 {
+  filter: saturate(0.4) brightness(1.6);
+  -webkit-filter: saturate(0.4) brightness(1.6);
+}*/
